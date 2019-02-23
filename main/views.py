@@ -2,6 +2,14 @@ from django.shortcuts import render, get_object_or_404, redirect
 from main.models import Project, Feedback
 
 
+def recruiting_2018(request):
+    return render(request, 'main/recruiting_2018.html')
+
+"""
+def recruiting_2018_intro(request):
+    return render(request, 'main/recruiting_2018_intro.html')
+"""
+
 def index(request):
     return redirect('rsop')
 
@@ -29,4 +37,3 @@ def project_feedback(request, pk):
         return redirect('rsop-projects', pk=pk)
     else:
         return render(request, 'main/project-feedback.html', {'project': p})
-
